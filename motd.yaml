@@ -1,0 +1,12 @@
+---
+-
+# target where you need to play the playbook
+  hosts: db1
+
+  vars:
+    motd: "welcome to ansible rock" #key value
+  tasks:
+    - name: configure an motd(message of the day)
+      copy:
+        content: "{{ motd }}"
+        dest: /etc/motd
